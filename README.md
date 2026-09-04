@@ -1,5 +1,7 @@
 # Oficina Prime — Landing Page
 
+<img width="1901" height="889" alt="Image" src="https://github.com/user-attachments/assets/1c364e69-c706-4c74-b789-3f19cdf56526" />
+
 Landing Page desenvolvida para o **Desafio 01**, com foco em HTML5 semântico,
 CSS3, acessibilidade, responsividade e publicação no GitHub Pages.
 
@@ -81,6 +83,6 @@ garantir que o projeto pudesse ser explicado durante a apresentação.
 
 ## 🌐 Links
 
-**Site publicado:** adicionar após ativar o GitHub Pages.
+**Site publicado:** https://andressarodriguesdev.github.io/desafio_1/
 
-**Repositório:** adicionar após criar o repositório no GitHub.
+**Repositório:** https://github.com/andressarodriguesdev/desafio_1
