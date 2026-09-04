@@ -11,9 +11,8 @@
     --text: #f5f6f3;
     --muted: #9aa3a1;
     --line: rgba(255, 255, 255, 0.12);
-    --accent: #ff6a3d;
-    --accent-2: #ffb347;
-    --accent-dark: #2a1000;
+    --accent: #d7ff3f;
+    --accent-dark: #101300;
     --max-width: 1180px;
     --radius: 18px;
     --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
@@ -71,6 +70,9 @@ a {
     left: 0;
     width: 100%;
     border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(11, 13, 16, 0.7) 0%, rgba(11, 13, 16, 0) 100%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 .nav {
@@ -96,9 +98,16 @@ a {
     height: 34px;
     place-items: center;
     border: 1px solid var(--accent);
+    border-radius: 8px;
     color: var(--accent);
     font-size: 0.68rem;
     letter-spacing: -0.04em;
+    transition: background 180ms ease, color 180ms ease;
+}
+
+.brand:hover .brand-mark {
+    background: var(--accent);
+    color: var(--accent-dark);
 }
 
 .nav-list {
@@ -110,15 +119,37 @@ a {
 
 .nav-list a,
 .footer-inner nav a {
-    color: #c7cbce;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+    color: #c7cac8;
     font-size: 0.82rem;
     font-weight: 600;
     transition: color 180ms ease;
 }
 
+.nav-list a::after,
+.footer-inner nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 220ms ease;
+}
+
 .nav-list a:hover,
 .footer-inner nav a:hover {
     color: var(--accent);
+}
+
+.nav-list a:hover::after,
+.footer-inner nav a:hover::after {
+    transform: scaleX(1);
 }
 
 .nav-cta,
@@ -132,11 +163,17 @@ a {
     border-radius: 999px;
     font-size: 0.78rem;
     font-weight: 800;
-    transition: transform 180ms ease, background 180ms ease;
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .nav-cta {
     border: 1px solid var(--line);
+}
+
+.nav-cta:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-dark);
 }
 
 .nav-cta:hover,
@@ -150,20 +187,49 @@ a {
     display: flex;
     align-items: center;
     overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
     background:
         linear-gradient(90deg, rgba(8, 9, 10, 0.94) 0%, rgba(8, 9, 10, 0.72) 48%, rgba(8, 9, 10, 0.35) 100%),
+        radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.4) 100%),
         url("https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=2000&q=90") center / cover;
+    transform-origin: center;
+    animation: hero-zoom 22s ease-in-out infinite alternate;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    z-index: 3;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    pointer-events: none;
+}
+
+@keyframes hero-zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 75% 35%, rgba(255, 106, 61, 0.16), transparent 32%);
+    z-index: 1;
+    background: radial-gradient(circle at 75% 35%, rgba(215, 255, 63, 0.1), transparent 32%);
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding-top: 70px;
 }
 
@@ -184,7 +250,7 @@ a {
 .hero-text {
     max-width: 560px;
     margin-top: 28px;
-    color: #c9cdd0;
+    color: #c8ccca;
     font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
@@ -207,13 +273,14 @@ a {
 
 .hero-note {
     position: absolute;
+    z-index: 2;
     right: 0;
     bottom: 30px;
     left: 0;
     display: flex;
     justify-content: flex-end;
     gap: 12px;
-    color: #aeb3b6;
+    color: #aeb2af;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -350,7 +417,7 @@ a {
 }
 
 .service-card-featured p {
-    color: rgba(42, 16, 0, 0.72);
+    color: rgba(16, 19, 0, 0.72);
 }
 
 .service-card a {
@@ -533,7 +600,7 @@ a {
 }
 
 .contact .eyebrow {
-    color: #6b2600;
+    color: #475300;
 }
 
 .contact h2 {
@@ -543,7 +610,7 @@ a {
 .contact-inner > div:first-child > p:last-child {
     max-width: 520px;
     margin-top: 20px;
-    color: rgba(42, 16, 0, 0.7);
+    color: rgba(16, 19, 0, 0.7);
 }
 
 .contact-details {
@@ -556,12 +623,12 @@ a {
     display: grid;
     gap: 2px;
     padding-bottom: 15px;
-    border-bottom: 1px solid rgba(42, 16, 0, 0.2);
+    border-bottom: 1px solid rgba(16, 19, 0, 0.2);
     font-style: normal;
 }
 
 .contact-details span {
-    color: rgba(42, 16, 0, 0.6);
+    color: rgba(16, 19, 0, 0.6);
     font-size: 0.68rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -590,7 +657,7 @@ a {
 }
 
 .footer-inner p {
-    color: #7c8386;
+    color: #777b79;
     font-size: 0.7rem;
 }
 
@@ -723,5 +790,7 @@ a {
     *::before,
     *::after {
         transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }
