@@ -25,43 +25,95 @@
      HEADER
      ===================================================== -->
 
-    <header class="site-header">
-      <nav class="nav container" aria-label="Navegação principal">
-        <a class="brand" href="index.html" aria-label="Oficina Prime - início">
-          <span class="brand-mark" aria-hidden="true"> OP </span>
+   <header class="site-header">
+    <nav class="nav container" aria-label="Navegação principal">
 
-          <span> Oficina Prime </span>
+        <a class="brand" href="index.html" aria-label="Oficina Prime - início">
+            <span class="brand-mark" aria-hidden="true">OP</span>
+            <span>Oficina Prime</span>
         </a>
 
         <ul class="nav-list">
-          <li>
-            <a href="index.html"> Início </a>
-          </li>
-
-          <li>
-            <a href="servicos.html" aria-current="page"> Serviços </a>
-          </li>
-
-          <li>
-            <a href="index.html#sobre"> Sobre </a>
-          </li>
-
-          <li>
-            <a href="index.html#galeria"> Galeria </a>
-          </li>
-
-          <li>
-            <a href="index.html#depoimentos"> Depoimentos </a>
-          </li>
-
-          <li>
-            <a href="#contato"> Contato </a>
-          </li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="servico.html">Serviços</a></li>
+            <li><a href="index.html#galeria">Galeria</a></li>
+            <li><a href="index.html#depoimentos">Depoimentos</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
         </ul>
 
-        <a class="nav-cta" href=" agendamento.html"> Agendar atendimento </a>
-      </nav>
-    </header>
+        <a class="nav-cta" href="agendamento.html#agendamento">
+            Agendar serviço
+            <span aria-hidden="true">↗</span>
+        </a>
+
+        <!-- Checkbox invisível que controla o menu -->
+        <input
+            type="checkbox"
+            id="mobile-menu-toggle"
+            class="mobile-menu-checkbox"
+            aria-label="Abrir menu"
+        >
+
+        <!-- Botão visual -->
+        <label
+            for="mobile-menu-toggle"
+            class="mobile-menu-button"
+            aria-label="Abrir menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- Menu mobile -->
+        <div class="mobile-menu-panel">
+            <ul>
+                <li>
+                    <a href="index.html#sobre">
+                        <span>Sobre</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="servico.html">
+                        <span>Serviços</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#galeria">
+                        <span>Galeria</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#depoimentos">
+                        <span>Depoimentos</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#contato">
+                        <span>Contato</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <li class="mobile-menu-cta">
+                    <a href="agendamento.html#agendamento">
+                        <span>Agendar serviço</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</header>
 
     <main>
       <!-- =====================================================

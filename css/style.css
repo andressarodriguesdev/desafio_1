@@ -304,6 +304,289 @@ summary:focus-visible {
 }
 
 /* =========================================================
+   MOBILE MENU
+   Menu responsivo sem JavaScript
+   ========================================================= */
+
+.mobile-menu-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+    opacity: 0;
+}
+
+.mobile-menu-button {
+    display: none;
+}
+
+.mobile-menu-panel {
+    display: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE — MENU
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .nav {
+    position: relative;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  /* Botão hambúrguer */
+
+  .mobile-menu-button {
+    position: relative;
+    z-index: 31;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border: 1px solid var(--line-light);
+    border-radius: 50%;
+
+    background: rgba(8, 10, 12, 0.72);
+
+    cursor: pointer;
+
+    transition:
+      background 300ms var(--ease),
+      border-color 300ms ease,
+      transform 300ms var(--ease);
+  }
+
+  .mobile-menu-button span {
+    display: block;
+
+    width: 16px;
+    height: 1px;
+
+    background: var(--text);
+
+    transform-origin: center;
+
+    transition:
+      transform 350ms var(--ease),
+      background 250ms ease,
+      width 350ms var(--ease),
+      opacity 250ms ease;
+  }
+
+  .mobile-menu-button:hover {
+    border-color: var(--accent);
+    background: rgba(215, 255, 63, 0.08);
+  }
+
+  .mobile-menu-button:hover span {
+    background: var(--accent);
+  }
+
+
+  /* =====================================================
+     PAINEL
+     ===================================================== */
+
+  .mobile-menu-panel {
+    position: absolute;
+    z-index: 30;
+
+    top: calc(100% + 12px);
+    right: 0;
+    left: 0;
+
+    display: block;
+
+    padding: 14px;
+
+    border: 1px solid var(--line-light);
+
+    background: rgba(13, 16, 18, 0.97);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-12px);
+
+    transition:
+      opacity 300ms var(--ease),
+      visibility 300ms var(--ease),
+      transform 400ms var(--ease);
+  }
+
+  .mobile-menu-panel ul {
+    display: grid;
+    gap: 0;
+
+    list-style: none;
+  }
+
+  .mobile-menu-panel li {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-menu-panel li:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* =====================================================
+     LINKS
+     ===================================================== */
+
+  .mobile-menu-panel a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 58px;
+
+    padding-inline: 10px;
+
+    color: var(--muted-light);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    transition:
+      color 250ms ease,
+      padding-left 300ms var(--ease);
+  }
+
+  .mobile-menu-panel a:hover {
+    color: var(--accent);
+    padding-left: 16px;
+  }
+
+  .mobile-menu-panel a > span:last-child {
+    color: var(--accent);
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+
+
+  /* =====================================================
+     CTA MOBILE
+     ===================================================== */
+
+  .mobile-menu-panel .mobile-menu-cta {
+    margin-top: 12px;
+    border-bottom: 0;
+  }
+
+  .mobile-menu-panel .mobile-menu-cta a {
+    min-height: 54px;
+
+    padding-inline: 20px;
+
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+
+    background: var(--accent);
+    color: var(--accent-dark);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    transition:
+      background 250ms ease,
+      color 250ms ease,
+      transform 250ms var(--ease);
+  }
+
+  .mobile-menu-panel .mobile-menu-cta a:hover {
+    background: #e1ff68;
+    color: var(--accent-dark);
+    padding-left: 20px;
+    transform: translateY(-2px);
+  }
+
+  .mobile-menu-panel .mobile-menu-cta a > span:last-child {
+    color: var(--accent-dark);
+    font-size: 1.1rem;
+    opacity: 1;
+
+    transition: transform 250ms var(--ease);
+  }
+
+  .mobile-menu-panel .mobile-menu-cta a:hover > span:last-child {
+    transform: translateX(4px);
+  }
+
+
+  /* =====================================================
+     ABRIR MENU
+     ===================================================== */
+
+  .mobile-menu-checkbox:checked ~ .mobile-menu-button span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .mobile-menu-checkbox:checked ~ .mobile-menu-button span:nth-child(2) {
+    width: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu-checkbox:checked ~ .mobile-menu-button span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .mobile-menu-checkbox:checked ~ .mobile-menu-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 620PX
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+  .mobile-menu-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mobile-menu-panel {
+    top: calc(100% + 8px);
+  }
+
+}
+
+
+
+/* =========================================================
    HERO
    ========================================================= */
 
