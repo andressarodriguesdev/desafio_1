@@ -1,6 +1,6 @@
 # Oficina Prime — Landing Page
 
-<img width="1901" height="889" alt="Image" src="https://github.com/user-attachments/assets/1c364e69-c706-4c74-b789-3f19cdf56526" />
+<img width="1898" height="898" alt="Image" src="https://github.com/user-attachments/assets/96efe66c-c33f-43af-a3fc-567467b5dea7" />
 
 Landing Page desenvolvida para o **Desafio 01**, com foco em HTML5 semântico,
 CSS3, acessibilidade, responsividade e publicação no GitHub Pages.
