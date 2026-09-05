@@ -1,0 +1,306 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Agende seu atendimento na Oficina Prime e conte com diagnóstico preciso e manutenção automotiva."
+    />
+
+    <title>Oficina Prime | Agendamento</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navegação principal">
+        <a class="brand" href="index.html" aria-label="Oficina Prime - início">
+          <span class="brand-mark" aria-hidden="true">OP</span>
+          <span>Oficina Prime</span>
+        </a>
+
+        <ul class="nav-list">
+          <li>
+            <a href="index.html#sobre">Sobre</a>
+          </li>
+
+          <li>
+            <a href="servico.html">Serviços</a>
+          </li>
+
+          <li>
+            <a href="index.html#galeria">Galeria</a>
+          </li>
+
+          <li>
+            <a href="index.html#depoimentos">Depoimentos</a>
+          </li>
+
+          <li>
+            <a href="index.html#contato">Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- =====================================================
+       AGENDAMENTO
+       ===================================================== -->
+
+      <section class="section booking-page-section" id="agendamento">
+        <div class="container booking-page-inner">
+          <div class="booking-page-intro">
+            <span class="eyebrow">01 / AGENDAMENTO</span>
+
+            <h2>
+              Agende seu<br />
+              <em>atendimento.</em>
+            </h2>
+
+            <p>
+              Conte um pouco sobre seu veículo e o serviço que você procura.
+            </p>
+          </div>
+
+          <div class="booking-form-wrapper">
+            <div class="booking-form-header">
+              <span>OFICINA PRIME</span>
+              <span>ATENDIMENTO / 01</span>
+            </div>
+
+            <form
+              class="booking-form"
+              action="mailto:contato@oficinaprime.com.br"
+              method="post"
+              enctype="text/plain"
+            >
+              <div class="booking-form-row">
+                <div class="booking-field">
+                  <label for="nome">Nome</label>
+
+                  <input
+                    type="text"
+                    id="nome"
+                    name="Nome"
+                    placeholder="Seu nome"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+
+                <div class="booking-field">
+                  <label for="telefone">Telefone</label>
+
+                  <input
+                    type="tel"
+                    id="telefone"
+                    name="Telefone"
+                    placeholder="(61) 99999-9999"
+                    autocomplete="tel"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="booking-form-row">
+                <div class="booking-field">
+                  <label for="email">E-mail</label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="E-mail"
+                    placeholder="seuemail@email.com"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+
+                <div class="booking-field">
+                  <label for="veiculo">Veículo</label>
+
+                  <input
+                    type="text"
+                    id="veiculo"
+                    name="Veículo"
+                    placeholder="Ex.: Honda Civic 2022"
+                  />
+                </div>
+              </div>
+
+              <div class="booking-field">
+                <label for="servico">Serviço desejado</label>
+
+                <select id="servico" name="Serviço">
+                  <option value="">Selecione um serviço</option>
+
+                  <option value="Diagnóstico automotivo">
+                    Diagnóstico automotivo
+                  </option>
+
+                  <option value="Freios e suspensão">
+                    Freios &amp; suspensão
+                  </option>
+
+                  <option value="Manutenção preventiva">
+                    Manutenção preventiva
+                  </option>
+
+                  <option value="Motor e arrefecimento">
+                    Motor &amp; arrefecimento
+                  </option>
+
+                  <option value="Injeção e eletrônica">
+                    Injeção &amp; eletrônica
+                  </option>
+
+                  <option value="Revisão completa">Revisão completa</option>
+                </select>
+              </div>
+
+              <div class="booking-field">
+                <label for="mensagem">Mensagem</label>
+
+                <textarea
+                  id="mensagem"
+                  name="Mensagem"
+                  rows="5"
+                  placeholder="Conte brevemente o que está acontecendo com o veículo."
+                ></textarea>
+              </div>
+
+              <div class="booking-form-actions">
+                <button type="submit" class="booking-submit">
+                  Solicitar atendimento
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       LOCALIZAÇÃO
+       ===================================================== -->
+
+      <section class="section location-section" id="localizacao">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">02 / LOCALIZAÇÃO</span>
+
+              <h2>
+                Estamos em<br />
+                <em>Brasília — DF.</em>
+              </h2>
+            </div>
+
+            <p>Encontre a Oficina Prime e planeje sua visita.</p>
+          </div>
+
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps?q=Bras%C3%ADlia%2C%20DF&output=embed"
+              width="100%"
+              height="440"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização da Oficina Prime em Brasília - DF"
+            ></iframe>
+          </div>
+
+          <div class="location-address">
+            <span class="detail-label">ENDEREÇO</span>
+
+            <strong>Brasília — DF</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       CONTATO
+       ===================================================== -->
+
+      <section class="contact-page" id="contato">
+        <div class="container contact-page-inner">
+          <div class="contact-page-intro">
+            <span class="eyebrow">OFICINA PRIME / CONTATO</span>
+
+            <h1>
+              Fale com<br />
+              <em>a gente.</em>
+            </h1>
+
+            <p>
+              Precisa de um diagnóstico, revisão ou manutenção? Entre em contato
+              e agende seu atendimento.
+            </p>
+          </div>
+
+          <div class="contact-page-details">
+            <div class="contact-page-detail">
+              <span class="detail-label">TELEFONE</span>
+
+              <a href="tel:+556133330000">(61) 3333-0000</a>
+            </div>
+
+            <div class="contact-page-detail">
+              <span class="detail-label">E-MAIL</span>
+
+              <a href="mailto:contato@oficinaprime.com.br">
+                contato@oficinaprime.com.br
+              </a>
+            </div>
+
+            <div class="contact-page-detail">
+              <span class="detail-label">HORÁRIO</span>
+
+              <strong>
+                Segunda a sexta · 08h às 18h<br />
+                Sábado · 08h às 13h
+              </strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">OP</span>
+          <span>Oficina Prime</span>
+        </a>
+
+        <p>© 2026 Oficina Prime. Projeto acadêmico.</p>
+
+        <nav>
+          <a href="index.html#sobre">Sobre</a>
+          <a href="servicos.html">Serviços</a>
+          <a href=" agendamento.html">Contato</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
